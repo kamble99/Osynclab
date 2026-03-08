@@ -1,10 +1,17 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-900">
-      <h1 className="text-6xl font-bold text-blue-500">
-        OSyncLab
-      </h1>
-    </div>
+    <BrowserRouter>
+
+      <Routes>
+        <Route path="/register" element={<Register />} />
+         <Route path="/login" element={<Login />} />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
