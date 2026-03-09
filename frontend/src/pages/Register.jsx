@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { loginUser} from "../services/authservices";
 
+import { Link } from "react-router-dom";
 import { registerUser } from "../services/authservices";
 
 const Register = () => {
@@ -74,6 +76,15 @@ const Register = () => {
                         >
                             Register
                         </button>
+                         <p className="text-center text-gray-300 mt-4">
+                            Already have an account?{" "}
+                            <Link
+                                to="/login"
+                                className="text-blue-400 hover:text-blue-300 font-semibold"
+                            >
+                                Login
+                            </Link>
+                        </p>
 
                     </form>
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loginUser } from "../services/authservices";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -25,7 +26,7 @@ const Login = () => {
 
       localStorage.setItem("token", res.data.access);
 
-      alert("Login successful!");
+      window.location.href = "/dashboard";
 
     } catch (error) {
 
@@ -69,6 +70,15 @@ const Login = () => {
             >
               Login
             </button>
+            <p className="text-center text-gray-300 mt-4">
+              Don't have an account?{" "}
+              <Link
+                to="/register"
+                className="text-blue-400 hover:text-blue-300 font-semibold"
+              >
+                Register
+              </Link>
+            </p>
 
           </form>
 
